@@ -2,13 +2,25 @@
 
 import requests
 import json
+import configparser
+import os
 
-URL = 'http://api.test.shop.tele2.ru/api/4c6d3559-6956-42e4-9d9b-adc5bc757149/catalog/msk/RandomNumber' #api для
+
+
+config = configparser.ConfigParser()
+config._interpolation = configparser.ExtendedInterpolation()
+
+if not os.path.exists('settings.ini'):
+    print('Не найден конфигурационный файл')
+
+config.read('settings.ini')
+URL = config.get('urls', 'URL')
+
 # получения номера телефона в регионе Москва
 
-URL_RES = 'http://api.test.shop.tele2.ru/api/v3/4c6d3559-6956-42e4-9d9b-adc5bc757149/reserve/msk/msisdn' # api для
-# резервирования телефонного номера
 
+# резервирования телефонного номера
+URL_RES = config.get('urls', 'URL_RES')
 
 request_res = requests.get(URL) #выполняем запрос
 
@@ -53,7 +65,8 @@ else:
 
 
 ##### оформить заказ
-URL_ORDER = 'http://api.test.shop.tele2.ru/api/4c6d3559-6956-42e4-9d9b-adc5bc757149/order/msk/create/' + token
+URL_ORDER = config.get('urls', 'URL_ORDER')
+URL_ORDER = URL_ORDER + token
 # Входные данные
 input_data = { 'OrderInfo' :
     {
