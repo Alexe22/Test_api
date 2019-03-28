@@ -59,7 +59,7 @@ input_data = { 'OrderInfo' :
     {
     'CustomerContact': {
                 'FullName': 'Nikiforov Alexey',
-                'ContactPhone': '79515272866',
+                'ContactPhone': '79515123456',
                 'Email': 'alexey.nikiforov@tele2.ru'
                        },
     'CustomerIdentity' : {
