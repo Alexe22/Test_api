@@ -1,0 +1,20 @@
+{ "OrderInfo" :
+    {
+    "CustomerContact": {
+                "FullName": "Nikiforov Alexey",
+                "ContactPhone": "79515123456",
+                "Email": "alexey.nikiforov@tele2.ru"
+                       },
+    "CustomerIdentity" : {
+                 "DocumentType": 456,
+                 "DocumentNumber": "5812456"
+                         }
+    },
+    "Products" : [
+              {
+                  "IsDevice" : "True",
+                  "PhoneId" : "123",
+                  "Sim": "Micro"
+              }
+                 ]
+}

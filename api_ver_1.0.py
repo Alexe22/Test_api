@@ -64,26 +64,9 @@ else:
 URL_ORDER = config.get('urls', 'URL_ORDER')
 URL_ORDER = URL_ORDER + token
 # Входные данные
-input_data = { 'OrderInfo' :
-    {
-    'CustomerContact': {
-                'FullName': 'Nikiforov Alexey',
-                'ContactPhone': '79515123456',
-                'Email': 'alexey.nikiforov@tele2.ru'
-                       },
-    'CustomerIdentity' : {
-                 'DocumentType': 456,
-                 'DocumentNumber': '5812456'
-                         },
-    },
-    'Products' : [
-              {
-                  'IsDevice' : True,
-                  'PhoneId' : uniq_id,
-                  'Sim': 'Micro',
-              }
-                 ]
-}
+with open('data.json', 'r', encoding='utf-8') as data:
+    input_data = json.load(data)
+print(input_data)
 data2_json = json.dumps(input_data)
 #print(data2_json)
 response_order = requests.post(URL_ORDER, data=data2_json, headers=headers)
