@@ -1,19 +1,19 @@
-{ "OrderInfo" :
-    {
+{
     "CustomerContact": {
-                "FullName": "Nikiforov Alexey",
-                "ContactPhone": "79515123456",
-                "Email": "alexey.nikiforov@tele2.ru"
+                "FullName": "Петров Вася",
+                "ContactPhone": "79571234567",
+                "Email": "v.petrov@mail.ru"
                        },
     "CustomerIdentity" : {
-                 "DocumentType": 456,
+                 "DocumentType": 456123,
                  "DocumentNumber": "5812456"
-                         }
-    },
+                         },
+    "SalesPointId": "",
+	"CityId" : "",
     "Products" : [
               {
-                  "IsDevice" : "True",
-                  "PhoneId" : "123",
+				  "Msisdn" : "",
+                  "TariffId" : "",
                   "Sim": "Micro"
               }
                  ]
